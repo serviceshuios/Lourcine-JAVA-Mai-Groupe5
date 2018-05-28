@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import domaine.Club;
 import domaine.Compte;
+import domaine.Login;
 import domaine.Personne;
 
 public interface Iservice {
@@ -30,6 +31,13 @@ public interface Iservice {
 	public void updateClub(Club club);
 	public void deleteClub(Club club);
 	public Collection<Club> listerClubs(int idClub);
+	
+	// === CRUD LOGIN === / /
+	public void createLogin(Login login);
+	public void readLogin(Login login);
+	public void updateLogin(Login login);
+	public void deleteLogin(Login login);
+	public Collection<Login> listerLogins(int idLogin);
 	
 	public void attribuerCompte(Personne p, Compte compte); 
 	public void affilierClub(Personne p, Club club); 
