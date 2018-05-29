@@ -1,6 +1,7 @@
 package domaine;
 
-import java.util.Collection;
+import java.util.Hashtable;
+import java.util.Map;
 
 public class Personne {
 
@@ -8,8 +9,8 @@ public class Personne {
 	private String nom;
 	private String prenom;
 	private int age;
-	private Collection<Compte> comptes;
-	private Collection<Club> clubs;
+	private Map<Integer,Compte> comptes;
+	private Map<Integer,Club> clubs;
 	private Login login;
 
 	public Personne() {
@@ -17,15 +18,17 @@ public class Personne {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Personne(int idPersonne, String nom, String prenom, int age, Collection<Compte> comptes,
-			Collection<Club> clubs, Login login) {
+	public Personne(int idPersonne, String nom, String prenom, int age, Map<Integer,Compte> comptes,
+			Map<Integer,Club> clubs, Login login) {
 		super();
 		this.idPersonne = idPersonne;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
-		this.comptes = comptes;
-		this.clubs = clubs;
+		this.comptes = new Hashtable<Integer, Compte>() ;
+		this.comptes.putAll(comptes);
+		this.clubs = new Hashtable<Integer, Club>() ;
+		this.clubs.putAll(clubs);
 		this.login = login;
 	}
 	
@@ -104,7 +107,7 @@ public class Personne {
 	/**
 	 * @return the comptes
 	 */
-	public Collection<Compte> getComptes() {
+	public Map<Integer,Compte> getComptes() {
 		return comptes;
 	}
 
@@ -112,14 +115,14 @@ public class Personne {
 	 * @param comptes
 	 *            the comptes to set
 	 */
-	public void setComptes(Collection<Compte> comptes) {
-		this.comptes = comptes;
+	public void setComptes(Map<Integer,Compte> comptes) {
+		this.comptes.putAll(comptes);
 	}
 
 	/**
 	 * @return the clubs
 	 */
-	public Collection<Club> getClubs() {
+	public Map<Integer, Club> getClubs() {
 		return clubs;
 	}
 
@@ -127,8 +130,8 @@ public class Personne {
 	 * @param clubs
 	 *            the clubs to set
 	 */
-	public void setClubs(Collection<Club> clubs) {
-		this.clubs = clubs;
+	public void setClubs(Map<Integer, Club> clubs) {
+		this.clubs.putAll(clubs);
 	}
 
 	/**

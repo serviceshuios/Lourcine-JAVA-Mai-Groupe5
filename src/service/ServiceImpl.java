@@ -13,6 +13,7 @@ public class ServiceImpl implements Iservice {
 
 	private Map<Integer, Personne> personnes = new Hashtable<Integer, Personne>() ; 
 	private Map<Integer, Compte> comptes = new Hashtable<Integer, Compte>() ;
+	private Map<Integer, Club> clubs = new Hashtable<Integer, Club>() ;
 	
 	@Override
 	public Map<Integer, Personne> createPersonne(Personne p) {
@@ -86,9 +87,10 @@ public class ServiceImpl implements Iservice {
 	// ===========    Methodes de l'objet Club ========================// 
 
 	@Override
-	public void createClub(Club club) {
+	public Map <Integer, Club> createClub(Club club) {
 		// TODO Auto-generated method stub
-		
+		clubs.put(club.getIdClub(), club);
+		return clubs ; 
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public interface Iservice {
 	
 	// === CRUD Club === //
 	
-	public void createClub(Club club); 
+	public Map<Integer, Club> createClub(Club club); 
 	public void readClub(Club club);
 	public void updateClub(Club club);
 	public void deleteClub(Club club);
