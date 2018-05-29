@@ -7,6 +7,15 @@ public class CompteSimple extends Compte {
 		super();
 		this.decouvert = decouvert;
 	}
+	
+	
+
+	public CompteSimple(int idCompte, double decouvert) {
+		super(idCompte);
+		this.decouvert = decouvert;
+	}
+
+
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

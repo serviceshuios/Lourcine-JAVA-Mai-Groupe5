@@ -12,6 +12,8 @@ import domaine.Personne;
 public class ServiceImpl implements Iservice {
 
 	private Map<Integer, Personne> personnes = new Hashtable<Integer, Personne>() ; 
+	private Map<Integer, Compte> comptes = new Hashtable<Integer, Compte>() ;
+	
 	@Override
 	public Map<Integer, Personne> createPersonne(Personne p) {
 		// TODO Auto-generated method stub
@@ -44,11 +46,14 @@ public class ServiceImpl implements Iservice {
 			System.out.println(entry);
 		
 	}
+	
+	// ==========   Methodes de l'objet Compte ==============================//
 
 	@Override
-	public void createCompte(Compte compte) {
+	public Map <Integer, Compte> createCompte(Compte compte) {
 		// TODO Auto-generated method stub
-		
+		comptes.put(compte.getIdCompte(), compte);
+		return comptes ; 
 	}
 
 	@Override
@@ -70,10 +75,15 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public Collection<Compte> listerComptes(int idCompte) {
+	public void listerComptes(Map<Integer, Compte> comptes) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		for (Map.Entry<Integer, Compte> entry : comptes.entrySet()) 
+			System.out.println(entry);
+	
 	}
+	
+	// ===========    Methodes de l'objet Club ========================// 
 
 	@Override
 	public void createClub(Club club) {

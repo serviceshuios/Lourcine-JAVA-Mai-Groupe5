@@ -8,6 +8,15 @@ public class CompteEpargne extends Compte {
 		super();
 		this.pourcentage = pourcentage;
 	}
+	
+	
+
+	public CompteEpargne(int idCompte, double pourcentage) {
+		super(idCompte);
+		this.pourcentage = pourcentage;
+	}
+
+
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

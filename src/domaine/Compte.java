@@ -19,6 +19,12 @@ public abstract class Compte {
 		this.solde = solde;
 		this.proprietaire = proprietaire;
 	}
+	
+	
+	public Compte(int idCompte) {
+		super();
+		this.idCompte = idCompte;
+	}
 
 
 	/**

@@ -19,11 +19,11 @@ public interface Iservice {
 	
 	// ===  CRUD Compte === //
 	
-	public void createCompte(Compte compte); 
+	public Map <Integer, Compte> createCompte(Compte compte); 
 	public void readCompte (Compte compte);
 	public void updateCompte(Compte compte);
 	public void deleteCompte (Compte compte);
-	public Collection<Compte> listerComptes(int idCompte) ;
+	public void listerComptes(Map<Integer,Compte> comptes) ;
 	
 	// === CRUD Club === //
 	
