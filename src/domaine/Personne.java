@@ -28,6 +28,16 @@ public class Personne {
 		this.clubs = clubs;
 		this.login = login;
 	}
+	
+	
+
+	public Personne(int idPersonne, String nom, String prenom, int age) {
+		super();
+		this.idPersonne = idPersonne;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+	}
 
 	/**
 	 * @return the idPersonne
